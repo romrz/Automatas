@@ -16,7 +16,7 @@ public class Transicion {
     private int qf;
 
     /**
-     * Construye una nueva transicion
+     * Crea una nueva transicion
      *
      * @param qi Estado origen
      * @param s Simbolo de entrada
@@ -26,6 +26,22 @@ public class Transicion {
 	this.qi = qi;
 	this.s = s;
 	this.qf = qf;
+    }
+
+    /**
+     * Crea una nueva transicion
+     *
+     * @param t Cadena que representa una transicion. De la forma (qi,s,qf)
+     */
+    public Transicion(String t) {
+	
+	String tokens[] = t.substring(1, t.length() - 1).split(",");
+
+	qi = Integer.parseInt(tokens[0]);
+
+	s = tokens[1].equals("lambda") ? AFNL.LAMBDA : tokens[1].charAt(0);
+
+	qf = Integer.parseInt(tokens[2]);
     }
     
     public int obtenerEstadoSiguiente(int q, char si) {

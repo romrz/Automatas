@@ -19,16 +19,10 @@ public class AFNL extends AF {
     private Set<Integer> estadosAuxiliar;
     private Set<Integer> auxiliarClausuraLambda;
 
-    /**
-     * Construye un nuevo automata finito no determinista
-     * con transiciones lambda
-     *
-     * @param Q Estados del Automata
-     * @param S Alfabeto
-     * @param q0 Estado Inicial
-     * @param d Funcion de transicion
-     * @param F Estados Finales
-     */
+    public AFNL() {
+	super();
+    }    
+
     public AFNL(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
 	super(Q, S, q0, d, F);
 
@@ -36,6 +30,14 @@ public class AFNL extends AF {
 	estadosAuxiliar = new HashSet<Integer>();
 	auxiliarClausuraLambda = new HashSet<Integer>();
     }
+
+    public AFNL(String Q, String S, int q0, String d, String F) {
+	super(Q, S, q0, d, F);
+
+	estadosActuales = new HashSet<Integer>();
+	estadosAuxiliar = new HashSet<Integer>();
+	auxiliarClausuraLambda = new HashSet<Integer>();
+    }    
 
     /**
      * Verifica si el automata reconoce la entrada

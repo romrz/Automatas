@@ -9,16 +9,16 @@ import java.util.ArrayList;
  */
 public class AFD extends AF {
 
-    /**
-     * Construye un nuevo automata finito determinista
-     *
-     * @param Q Estados del Automata
-     * @param S Alfabeto
-     * @param q0 Estado Inicial
-     * @param d Funcion de transicion
-     * @param F Estados Finales
-     */
+    public AFD() {
+	super();
+    }
+
     public AFD(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
+	super(Q, S, q0, d, F);
+    }
+
+
+    public AFD(String Q, String S, int q0, String d, String F) {
 	super(Q, S, q0, d, F);
     }
 

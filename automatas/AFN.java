@@ -7,28 +7,29 @@ import java.util.HashSet;
 
 /**
  * Interprete de Automatas Finitos No Deterministas
- *
  */
 public class AFN extends AF {
 
     private Set<Integer> estadosActuales;
     private Set<Integer> estadosAuxiliar;
 
-    /**
-     * Construye un nuevo automata finito no determinista
-     *
-     * @param Q Estados del Automata
-     * @param S Alfabeto
-     * @param q0 Estado Inicial
-     * @param d Funcion de transicion
-     * @param F Estados Finales
-     */
+    public AFN() {
+	super();
+    }
+
     public AFN(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
 	super(Q, S, q0, d, F);
 
 	estadosActuales = new HashSet<Integer>();
 	estadosAuxiliar = new HashSet<Integer>();
     }
+
+    public AFN(String Q, String S, int q0, String d, String F) {
+	super(Q, S, q0, d, F);
+
+	estadosActuales = new HashSet<Integer>();
+	estadosAuxiliar = new HashSet<Integer>();
+    }    
 
     /**
      * Verifica si el automata reconoce la entrada
