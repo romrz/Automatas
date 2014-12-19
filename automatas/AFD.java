@@ -7,18 +7,7 @@ import java.util.ArrayList;
  * Interprete de Automatas Finitos Deterministas
  *
  */
-public class AFD {
-
-    // Counjunto de estados
-    private ArrayList<Integer> Q;
-    // Conjunto de simbolos del alfabeto
-    private ArrayList<Character> S;
-    // Estado inicial
-    private int q0;
-    // Conjunto de estados finales
-    private ArrayList<Integer> F;
-    // Funcion de transicion
-    private ArrayList<Transicion> d;
+public class AFD extends AF {
 
     /**
      * Construye un nuevo automata finito determinista
@@ -30,13 +19,7 @@ public class AFD {
      * @param F Estados Finales
      */
     public AFD(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
-	
-	this.Q = Q;
-	this.S = S;
-	this.q0 = q0;
-	this.F = F;
-	this.d = d;
-
+	super(Q, S, q0, d, F);
     }
 
     /**
@@ -46,6 +29,7 @@ public class AFD {
      *
      * @return True si se reconoce la entrada, false si no
      */
+    @Override
     public boolean reconoce(String entrada) {
 	
 	char simbolos[] = entrada.toCharArray();
@@ -77,5 +61,4 @@ public class AFD {
 	return qf;
 
     }
-
 }

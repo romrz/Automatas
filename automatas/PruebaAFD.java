@@ -81,7 +81,7 @@ public class PruebaAFD {
 
 	AFD a = new AFD(Q, S, q0, d, F);
 
-	System.out.println(a.reconoce("11w111111111"));
+	System.out.println(a.reconoce("11111111111"));
 
     }
 
