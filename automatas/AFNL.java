@@ -23,14 +23,6 @@ public class AFNL extends AF {
 	super();
     }    
 
-    public AFNL(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
-	super(Q, S, q0, d, F);
-
-	estadosActuales = new HashSet<Integer>();
-	estadosAuxiliar = new HashSet<Integer>();
-	auxiliarClausuraLambda = new HashSet<Integer>();
-    }
-
     public AFNL(String Q, String S, int q0, String d, String F) {
 	super(Q, S, q0, d, F);
 

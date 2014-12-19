@@ -17,13 +17,6 @@ public class AFN extends AF {
 	super();
     }
 
-    public AFN(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
-	super(Q, S, q0, d, F);
-
-	estadosActuales = new HashSet<Integer>();
-	estadosAuxiliar = new HashSet<Integer>();
-    }
-
     public AFN(String Q, String S, int q0, String d, String F) {
 	super(Q, S, q0, d, F);
 

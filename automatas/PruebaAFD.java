@@ -1,6 +1,7 @@
 package automatas;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class PruebaAFD {
 
@@ -15,7 +16,15 @@ public class PruebaAFD {
 
 	AFD a = new AFD(Q, S, q0, d, F);
 
-	System.out.println(a.reconoce("+-1345346456."));
+	Scanner s = new Scanner(System.in);
+	String entrada = null;
+
+	System.out.println("Automata que reconoce numeros reales.");
+	System.out.print("Introduce un numero: ");
+	while((entrada = s.next()).equals("exit") == false) {
+	    System.out.println(a.reconoce(entrada) ? "Aceptado" : "No aceptado");
+	    System.out.print("Introduce un numero: ");
+	}
 
     }
 

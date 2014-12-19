@@ -1,5 +1,7 @@
 package automatas;
 
+import java.util.Stack;
+
 /**
  * Representa una transicion en la funcion de transicion
  * de la forma (qi, s, qf).
@@ -9,11 +11,13 @@ package automatas;
 public class Transicion {
     
     // Estado inicial o de origen
-    private int qi;
+    protected int qi;
     // Simbolo de entrada
-    private char s;
+    protected char s;
     // Estado siguiente
-    private int qf;
+    protected int qf;
+
+    public Transicion() {}
 
     /**
      * Crea una nueva transicion
@@ -38,12 +42,10 @@ public class Transicion {
 	String tokens[] = t.substring(1, t.length() - 1).split(",");
 
 	qi = Integer.parseInt(tokens[0]);
-
 	s = tokens[1].equals("lambda") ? AFNL.LAMBDA : tokens[1].charAt(0);
-
 	qf = Integer.parseInt(tokens[2]);
     }
-    
+
     public int obtenerEstadoSiguiente(int q, char si) {
 	return qi == q && s == si ? qf : 0;
     }

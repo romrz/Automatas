@@ -13,11 +13,6 @@ public class AFD extends AF {
 	super();
     }
 
-    public AFD(ArrayList<Integer> Q, ArrayList<Character> S, int q0, ArrayList<Transicion> d, ArrayList<Integer> F) {
-	super(Q, S, q0, d, F);
-    }
-
-
     public AFD(String Q, String S, int q0, String d, String F) {
 	super(Q, S, q0, d, F);
     }
